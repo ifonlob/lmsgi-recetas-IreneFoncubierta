@@ -1,0 +1,23 @@
+[
+  {
+    "codigo" : "1",
+    "nombre" : "Albóndigas con tomate",
+    "categoria" : "Entrante",
+    "tiempo" : 45,
+    "dificultad" : "Fácil"
+  },
+  {
+    "codigo" : "2",
+    "nombre" : "Arroz a la cubana",
+    "categoria" : "Principal",
+    "tiempo" : 60,
+    "dificultad" : "Media"
+  },
+  {
+    "codigo" : "3",
+    "nombre" : "Rollitos de primavera",
+    "categoria" : "Entrante",
+    "tiempo" : 25,
+    "dificultad" : "Media"
+  }
+]
