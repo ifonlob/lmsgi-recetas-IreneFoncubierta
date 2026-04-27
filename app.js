@@ -4,6 +4,7 @@ const fs = require("fs")
 const xml2js = require("xml2js")
 
 const parsearArchivoXML = async () =>{
+    try{
         const archivoXML = fs.readFileSync("./recetas.xml","utf8")
 
         const parseador = new xml2js.Parser({explicitArray:false})
@@ -17,19 +18,31 @@ const parsearArchivoXML = async () =>{
 
         const recetasJSON = recetasFormateadas.map((receta) =>(
             {
-              codigo: receta.$.codigo,
-              nombre: receta.nombre,
-              categoria: receta.categoria,
-              tiempo: Number(receta.tiempo),
-              dificultad: receta.dificultad
+                codigo: receta.$.codigo,
+                nombre: receta.nombre,
+                categoria: receta.categoria,
+                tiempo: Number(receta.tiempo),
+                dificultad: receta.dificultad
             }
         ))
 
         fs.writeFileSync("./recetas.json",JSON.stringify(recetasJSON,null, 2))
+    }
+    catch(error){
+        console.error(error)
+    }
+
 
 }
 
+const imprimirTabla = async () => {
+    const archivoJSON = fs.readFileSync("./recetas.json","utf8")
+    console.log(archivoJSON)
+}
+
+
 parsearArchivoXML()
+imprimirTabla()
 
 
 
