@@ -9,9 +9,13 @@ const parsearArchivoXML = async () =>{
         const parseador = new xml2js.Parser({explicitArray:false})
 
         const recetasEnBruto = await parseador.parseStringPromise(archivoXML);
+        console.log(recetasEnBruto)
 
+        const recetasFormateadas = recetasEnBruto.receta
 
-        const recetasFormateadas = recetasEnBruto.map((receta) =>(
+        // Me lanza una excepción TypeError debido al uso de map
+
+        const recetasJSON = recetasFormateadas.map((receta) =>(
             {
               codigo: receta.$.codigo,
               nombre: receta.nombre,
@@ -21,7 +25,7 @@ const parsearArchivoXML = async () =>{
             }
         ))
 
-        fs.writeFileSync("./recetas.json",JSON.stringify(recetasFormateadas,null, 2))
+        fs.writeFileSync("./recetas.json",JSON.stringify(recetasJSON,null, 2))
 
 }
 
