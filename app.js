@@ -10,7 +10,6 @@ const parsearArchivoXML = async () =>{
         const parseador = new xml2js.Parser({explicitArray:false})
 
         const recetasEnBruto = await parseador.parseStringPromise(archivoXML);
-        console.log(recetasEnBruto)
 
         const recetasFormateadas = recetasEnBruto.receta
 
@@ -37,11 +36,24 @@ const parsearArchivoXML = async () =>{
 
 const imprimirTabla = async () => {
     const archivoJSON = fs.readFileSync("./recetas.json","utf8")
-    console.log(archivoJSON)
+    const tabla = document.querySelector("#tabla").querySelector("#tabla-recetas")
+
+    const numFilas = archivoJSON[0].length
+    for(let i = 1; i < numFilas; i++) {
+        const fila = document.createElement("tr")
+        tabla.append(fila)
+        archivoJSON.forEach((objeto) => {
+            const celda = document.createElement("td")
+            fila.append(celda)
+            celda.textContent = objeto[i]
+        })
+    }
+
+
+
 }
 
 
-parsearArchivoXML()
 imprimirTabla()
 
 
