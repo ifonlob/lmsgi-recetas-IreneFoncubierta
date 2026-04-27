@@ -16,10 +16,12 @@ const parsearArchivoXML = async () =>{
               codigo: receta.$.codigo,
               nombre: receta.nombre,
               categoria: receta.categoria,
-              tiempo: receta.tiempo,
+              tiempo: Number(receta.tiempo),
               dificultad: receta.dificultad
             }
         ))
+
+
     }
     catch(err){
         console.error("Se ha producido un error al intentar parsear el archivo")
