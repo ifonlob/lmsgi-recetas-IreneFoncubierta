@@ -50,12 +50,9 @@ const imprimirTabla = async () => {
             celda.textContent = objeto[i]
         })
     }
-
-
-
 }
 
-
+parsearArchivoXML()
 imprimirTabla()
 
 
