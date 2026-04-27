@@ -1,19 +1,20 @@
-<recetas>
+<recetas xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:noNamespaceSchemaLocation="recetas.xml">
     <receta codigo="1">
         <nombre>Albóndigas con tomate</nombre>
-        <categoria>Carnes</categoria>
+        <categoria>Entrante</categoria>
         <tiempo>45</tiempo>
         <dificultad>Fácil</dificultad>
     </receta>
     <receta codigo="2">
         <nombre>Arroz a la cubana</nombre>
-        <categoria>Arroces</categoria>
+        <categoria>Principal</categoria>
         <tiempo>60</tiempo>
         <dificultad>Media</dificultad>
     </receta>
     <receta codigo="3">
         <nombre>Rollitos de primavera</nombre>
-        <categoria>Comida china</categoria>
+        <categoria>Entrante</categoria>
         <tiempo>25</tiempo>
         <dificultad>Media</dificultad>
     </receta>
