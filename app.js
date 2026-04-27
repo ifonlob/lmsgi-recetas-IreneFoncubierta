@@ -21,6 +21,7 @@ const parsearArchivoXML = async () =>{
             }
         ))
 
+        fs.writeFileSync("./recetas.json",JSON.stringify(recetasFormateadas))
 
     }
     catch(err){
@@ -29,7 +30,7 @@ const parsearArchivoXML = async () =>{
 
 }
 
-
+parsearArchivoXML()
 
 
 
