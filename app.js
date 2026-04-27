@@ -36,9 +36,11 @@ const parsearArchivoXML = async () =>{
 
 const imprimirTabla = async () => {
     const archivoJSON = fs.readFileSync("./recetas.json","utf8")
-    const tabla = document.querySelector("#tabla").querySelector("#tabla-recetas")
+    const tabla = document.querySelector("#tabla-recetas")
 
-    const numFilas = archivoJSON[0].length
+    if(!tabla) return
+
+    const numFilas = 5
     for(let i = 1; i < numFilas; i++) {
         const fila = document.createElement("tr")
         tabla.append(fila)
