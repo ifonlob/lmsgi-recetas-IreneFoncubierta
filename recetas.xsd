@@ -10,7 +10,10 @@
     <xs:complexType name="receta">
         <xs:sequence>
             <xs:element name="nombre" type="xs:string"/>
-            <xs:element name="categoria" type="xs:string">
+            <xs:element name="categoria" type="xs:string"/>
+            <xs:element name="tiempo" type="xs:integer"/>
+            <xs:element name="dificultad" type="xs:string"/>
         </xs:sequence>
+        <xs:attribute name="codigo"/>
     </xs:complexType>
 </xs:schema>
