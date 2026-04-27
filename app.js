@@ -10,6 +10,16 @@ const parsearArchivoXML = async () =>{
         const parseador = new xml2js.Parser({explicitArray:false})
 
         const recetasEnBruto = await parseador.parseStringPromise(archivoXML);
+
+        const recetasFormateadas = recetasEnBruto.map((receta) =>(
+            {
+              codigo: receta.$.codigo,
+              nombre: receta.nombre,
+              categoria: receta.categoria,
+              tiempo: receta.tiempo,
+              dificultad: receta.dificultad
+            }
+        ))
     }
     catch(err){
         console.error("Se ha producido un error al intentar parsear el archivo")
