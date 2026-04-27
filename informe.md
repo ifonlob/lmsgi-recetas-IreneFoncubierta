@@ -15,4 +15,8 @@ ya que éste internamente divide el archivo XML en un árbol de nodos, de forma 
 página HTML.
 
 Cabe destacar también que DOMParser al ser un objeto nativo de JavaScript solo funciona en el entorno cliente, es decir, en el navegador,
-a diferencia de otras librerías como xml2js que se ejecutan en el entorno servidor gracias a Node.js
+a diferencia de otras librerías como xml2js que se ejecutan en el entorno servidor gracias a Node.js.
+
+Por lo que gracias a este objeto podemos trabajar con JSON en proyectos más antiguos los cuales no usen el formato JSON por defecto,
+facilitándonos el trabajo ya que hoy en día, JSON es el formato de intercambio de datos por excelencia en el entorno web gracias a su sencillez, 
+liegereza, que está basado en texto y usa pares de clave-valor.
