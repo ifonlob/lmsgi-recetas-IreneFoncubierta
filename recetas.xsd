@@ -14,6 +14,6 @@
             <xs:element name="tiempo" type="xs:integer"/>
             <xs:element name="dificultad" type="xs:string"/>
         </xs:sequence>
-        <xs:attribute name="codigo"/>
+        <xs:attribute name="codigo" type="xs:string"/>
     </xs:complexType>
 </xs:schema>
