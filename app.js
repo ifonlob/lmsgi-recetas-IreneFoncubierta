@@ -4,12 +4,12 @@ const fs = require("fs")
 const xml2js = require("xml2js")
 
 const parsearArchivoXML = async () =>{
-    try{
         const archivoXML = fs.readFileSync("./recetas.xml","utf8")
 
         const parseador = new xml2js.Parser({explicitArray:false})
 
         const recetasEnBruto = await parseador.parseStringPromise(archivoXML);
+
 
         const recetasFormateadas = recetasEnBruto.map((receta) =>(
             {
@@ -21,12 +21,7 @@ const parsearArchivoXML = async () =>{
             }
         ))
 
-        fs.writeFileSync("./recetas.json",JSON.stringify(recetasFormateadas))
-
-    }
-    catch(err){
-        console.error("Se ha producido un error al intentar parsear el archivo")
-    }
+        fs.writeFileSync("./recetas.json",JSON.stringify(recetasFormateadas,null, 2))
 
 }
 
